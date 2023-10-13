@@ -221,7 +221,7 @@ function login() {
 
     if (email === storedEmail && password === storedPassword) {
         alert('Login successful!');
-        window.location.href = 'index.html';
+        window.location.href = 'todo.html';
     } else {
         alert('Invalid email or password. Please try again.');
     }

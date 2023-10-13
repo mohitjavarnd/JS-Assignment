@@ -3,90 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <!-- conatiner-for-todo-list -->
-    <div class="todo-list-wrapper">
-      <div class="container">
-        <!-- heading -->
-        <div class="heading-wrapper">
-          <h1 class="heading">
-            Todo List <i class="ri-calendar-todo-line"></i>
-          </h1>
-          <a href="login.html"
-            ><span>Logout<i class="ri-logout-circle-r-line"></i></span
-          ></a>
-        </div>
-        <!-- task-input-container -->
-        <div class="input-container">
-          <input type="text" id="new-task" placeholder="Enter a task..." />
-          <select id="new-priority" class="priority">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-          <input type="datetime-local" id="new-due-date" min="" />
-
-          <button onclick="addTask()"><i class="ri-file-add-line"></i></button>
-        </div>
-
-        <!-- filter-and-sortingcontainers-wrapper -->
-        <div class="filters-wrapper">
-          <button onclick="sortTasksByPriority()">Sort by Priority</button>
-
-          <div class="filter-container">
-            <button
-              id="all-btn"
-              class="filter-btn active"
-              onclick="filterTasks('all')"
-            >
-              All
-            </button>
-            <button
-              id="completed-btn"
-              class="filter-btn"
-              onclick="filterTasks('completed')"
-            >
-              Completed
-            </button>
-            <button
-              id="pending-btn"
-              class="filter-btn"
-              onclick="filterTasks('pending')"
-            >
-              Pending
-            </button>
+    <body>
+      <div class="authentication-container">
+        <div class="login-box">
+          <h1>Login- To Do List</h1>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required />
           </div>
-        </div>
-        <!-- modal-for-editing-the-task -->
-        <div id="edit-modal" class="modal">
-          <div class="modal-content">
-            <h1 class="edit-heading">Edit Your Task</h1>
-            <span class="close" onclick="closeModal()">&times;</span>
-            <input type="text" id="edited-task" placeholder="Edit Task" />
-            <select id="edited-priority" class="priority">
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
-            </select>
-            <button onclick="saveEditedTask()">Save</button>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required />
           </div>
+          <button onclick="login()">Login</button>
+          <p>
+            Don't have an account?
+            <a href="#" onclick="showSignupForm()">Sign Up</a>
+          </p>
         </div>
 
-        <ul id="task-list"></ul>
+        <div class="signup-box" style="display: none">
+          <h1>Sign Up- To Do List</h1>
+          <div class="form-group">
+            <label for="newEmail">Email:</label>
+            <input type="email" id="newEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="newPassword">Password:</label>
+            <input type="password" id="newPassword" required />
+          </div>
+          <button onclick="signup()">Sign Up</button>
+          <p>
+            Already have an account?
+            <a href="#" onclick="showLoginForm()">Login</a>
+          </p>
+        </div>
       </div>
-    </div>
+      <script src="script.js"></script>
+    </body>
 
     <script src="script/app.js"></script>
   </body>
