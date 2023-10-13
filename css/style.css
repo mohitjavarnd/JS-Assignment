@@ -1,0 +1,289 @@
+/* presets */
+:root {
+  --custom-red: #8b0000;
+  --custom-backgroung: linear-gradient(to right, #ffdada, #ffffff);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+/* conatiner-for-tasks */
+
+.todo-list-wrapper {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 670px;
+  width: 100%;
+  text-align: center;
+  background: var(--custom-backgroung);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  color: var(--custom-red);
+  padding: 60px;
+  border-radius: 10px;
+}
+
+/* heading-of-page */
+.heading-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading {
+  font-size: 2rem;
+  padding: 10px 0px;
+}
+.heading-wrapper span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--custom-red);
+  border: 2px solid var(--custom-red);
+  padding: 6px;
+}
+.heading-wrapper span i {
+  padding-left: 10px;
+}
+/* input-for-task-styling */
+.input-container {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.input-container input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.priority,
+#new-due-date {
+  padding: 8px;
+  border: none;
+  border-left: 1px solid var(--custom-red);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-bottom: 1px solid #000;
+}
+button {
+  background: var(--custom-red);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 7px 8px;
+}
+
+button i {
+  font-size: 1.2rem;
+}
+
+/* filter-section-styling */
+.filters-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* task-we-want-to-show-styling */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+}
+.task-text {
+  padding-right: 10px;
+}
+
+.checkbox {
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.completed {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.actions {
+  display: flex;
+}
+
+.actions button {
+  margin: 0 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.actions button.edit {
+  color: blue;
+  background: #fff;
+}
+
+.actions button.delete {
+  color: red;
+  background: #fff;
+}
+
+/* .filter-btn {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: #007bff;
+    color: #fff;
+} */
+/* Add margin to the priority input */
+
+/* modal-for-editing-styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background: var(--custom-backgroung);
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 350px;
+}
+.modal-content input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+}
+.edit-heading {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* responsive ness */
+@media only screen and (max-width: 767px) {
+
+
+  /* presets */
+  h1,
+  .input-container,
+  .filter-container {
+    padding: 20px 0px;
+  }
+
+  .todo-list-wrapper {
+    height: 900px;
+  }
+
+
+  /* mobile-view for container */
+  .container {
+    width: 90%;
+    padding: 10px 10px;
+  }
+
+
+  /* inputs-for-mobile-view */
+  .input-container {
+    display: grid;
+  }
+
+  .input-container select,
+  input,
+  button {
+    margin-bottom: 10px;
+  }
+
+
+  /* styling-for-mobile-view of filter section */
+
+
+  .filters-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  
+  /* task-section */
+
+
+  .group {
+    justify-content: center;
+    gap: 30px;
+  }
+  li {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .checkbox {
+    margin-top: 10px;
+  }
+  .actions {
+    gap: 20px;
+  }
+}
